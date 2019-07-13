@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.tecnico.domains.PlanetaDomain;
+import com.desafio.tecnico.integracao.SwapiService;
 import com.desafio.tecnico.services.PlanetaService;
 
 @RestController
@@ -20,31 +21,51 @@ import com.desafio.tecnico.services.PlanetaService;
 public class PlanetaResource {
 
 	@Autowired
-	private PlanetaService service;
+	private PlanetaService planetaService;
+	
+	@Autowired
+	private SwapiService swapiService;
 	
 	@GetMapping("/obter-por-id/{id}")
 	public ResponseEntity<PlanetaDomain> obterPor(@PathVariable Integer id) {
-		return ResponseEntity.ok(service.obterPor(id));
+		
+		PlanetaDomain planeta = planetaService.obterPor(id);
+		swapiService.obterAparicoesEmFilmePor(planeta);
+		
+		return ResponseEntity.ok(planeta);
 	}
 	
 	@GetMapping("/obter-por-nome/{nome}")
 	public ResponseEntity<PlanetaDomain> obterPor(@PathVariable String nome) {
-		return ResponseEntity.ok(service.obterPor(nome));
+		
+		PlanetaDomain planeta = planetaService.obterPor(nome);
+		swapiService.obterAparicoesEmFilmePor(planeta);
+		
+		return ResponseEntity.ok(planeta);
 	}
 	
 	@GetMapping("/obter-todos")
 	public ResponseEntity<List<PlanetaDomain>> obterTodos() {
-		return ResponseEntity.ok(service.obterTodos());
-	}
-	
-	@DeleteMapping("/remover-por-id/{id}")
-	public void removerPor(@PathVariable Integer id) {
-		service.removerPor(id);
+		
+		List<PlanetaDomain> planetas = planetaService.obterTodos();
+		swapiService.obterAparicoesEmFilmePor(planetas);
+		
+		return ResponseEntity.ok(planetas);
 	}
 	
 	@PostMapping("/inserir-por")
 	public ResponseEntity<PlanetaDomain> inserirPor(@RequestBody PlanetaDomain planeta) {
-		return ResponseEntity.ok(service.inserirPor(planeta));
+		
+		PlanetaDomain retornoPlaneta = planetaService.inserirPor(planeta);
+		swapiService.obterAparicoesEmFilmePor(planeta);
+		
+		return ResponseEntity.ok(retornoPlaneta);
 	}
+	
+	@DeleteMapping("/remover-por-id/{id}")
+	public void removerPor(@PathVariable Integer id) {
+		planetaService.removerPor(id);
+	}
+	
 	
 }

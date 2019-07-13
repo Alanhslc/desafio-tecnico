@@ -14,6 +14,8 @@ public class PlanetaDomain {
 	private String clima;
 	
 	private String terreno;
+	
+	private Integer aparicoesEmFilme = 0;
 
 	public Integer getId() {
 		return id;
@@ -47,9 +49,12 @@ public class PlanetaDomain {
 		this.terreno = terreno;
 	}
 
-	@Override
-	public String toString() {
-		return "PlanetaDomain [id=" + id + ", nome=" + nome + ", clima=" + clima + ", terreno=" + terreno + "]";
+	public Integer getAparicoesEmFilme() {
+		return aparicoesEmFilme;
 	}
-	
+
+	public void setAparicoesEmFilme(Integer aparicoesEmFilme) {
+		this.aparicoesEmFilme = aparicoesEmFilme;
+	}
+
 }
