@@ -1,7 +1,10 @@
 package com.desafio.tecnico.domains;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Document(collection = "planeta")
 public class PlanetaDomain {
@@ -15,6 +18,8 @@ public class PlanetaDomain {
 	
 	private String terreno;
 	
+	@Transient
+	@JsonSerialize
 	private Integer aparicoesEmFilme = 0;
 
 	public Integer getId() {
