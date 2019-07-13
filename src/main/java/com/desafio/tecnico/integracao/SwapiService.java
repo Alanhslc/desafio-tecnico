@@ -21,7 +21,7 @@ import com.desafio.tecnico.integracao.dto.SwapiDTO;
 public class SwapiService {
 
 	private static final Logger LOGGER = LogManager.getLogger(SwapiService.class);
-	private static final String URL = "https://swapi.co/api/";
+	private static final String URL = "https://swapi.co/api/planets/";
 	
 	public void obterAparicoesEmFilmePor(PlanetaDomain planeta) {
 		
@@ -32,9 +32,7 @@ public class SwapiService {
         int aparicoesEmFilme = 0;
 
         try {
-        	SwapiDTO swapiDTO = restTemplate.exchange(URL + "planets/" + 
-        			planeta.getId(), GET, entity, SwapiDTO.class).getBody();
-        	
+        	SwapiDTO swapiDTO = restTemplate.exchange(URL + planeta.getId(), GET, entity, SwapiDTO.class).getBody();
         	aparicoesEmFilme = swapiDTO.getFilms().length;
 		} catch (HttpClientErrorException e) {
 			
