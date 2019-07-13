@@ -5,6 +5,12 @@ import java.util.Arrays;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
+/**
+ * Constrói a classe HttpHeader com os valores padrão para retorno em JSON e browsers. <br>
+ * Estes valores podem ser alterados dinamicamente conforme a necessidade.
+ * @author alanh
+ *
+ */
 public class HttpHeadersBuilder {
 
 	private String webBrowser = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"; 
