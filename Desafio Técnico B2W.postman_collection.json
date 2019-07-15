@@ -1,0 +1,221 @@
+{
+	"id": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+	"name": "Desafio Técnico B2W",
+	"description": "",
+	"order": [
+		"a48efbef-99b3-c581-833c-32763c8e32d3",
+		"2c329fce-3234-8931-c5d5-49766e74d13d",
+		"a1a0e9d0-53d7-ca5f-b7a2-399973710de3",
+		"5d77c4bb-9692-1bba-5d18-032cf7102f86",
+		"034a1f3f-4c7a-4ff5-2b20-2e0b79354eed",
+		"622d2b87-9e7d-5e60-8b06-53736666fc26",
+		"9abb30db-1693-0002-e033-a3e8848ee56f"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1563045489171,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "034a1f3f-4c7a-4ff5-2b20-2e0b79354eed",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-nome/zzz",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"data": null,
+			"dataMode": "params",
+			"name": "ObterPorNome",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1563045555771,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "2c329fce-3234-8931-c5d5-49766e74d13d",
+			"headers": "Authorization: \nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/inserir-por",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1563158515204,
+			"name": "Salvar",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": [],
+			"rawModeData": "{\n\t\"id\": 4,\n\t\"nome\": \"sdsd\",\n\t\"clima\": \"qwqwq\",\n\t\"terreno\": \"1212\"\n}"
+		},
+		{
+			"id": "5d77c4bb-9692-1bba-5d18-032cf7102f86",
+			"headers": "Authorization: \n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-id/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1563158607298,
+			"name": "ObterPorId",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": []
+		},
+		{
+			"id": "622d2b87-9e7d-5e60-8b06-53736666fc26",
+			"headers": "",
+			"headerData": [],
+			"url": "https://swapi.co/api/planets/4",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"data": null,
+			"dataMode": "params",
+			"name": "SwapiApi",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1563045568503,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "9abb30db-1693-0002-e033-a3e8848ee56f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/autenticar",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Autenticacao",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1563046714893,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"usuario\": \"desafiotecnico\",\n\t\"senha\": \"senha\"\n}"
+		},
+		{
+			"id": "a1a0e9d0-53d7-ca5f-b7a2-399973710de3",
+			"headers": "Authorization: \n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-todos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1563158537274,
+			"name": "ObterTodos",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": []
+		},
+		{
+			"id": "a48efbef-99b3-c581-833c-32763c8e32d3",
+			"headers": "Authorization: \n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/remover-por-id/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1563158479131,
+			"name": "Remover",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": []
+		}
+	]
+}
