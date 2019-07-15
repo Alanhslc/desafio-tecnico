@@ -12,19 +12,19 @@ import com.desafio.tecnico.repositories.PlanetaRepository;
 @Service
 public class PlanetaService {
 
-	private static final String OBJETO_NÃO_ENCONTRADO_NA_BASE_DE_DADOS = "Objeto não encontrado na base de dados.";
+	private static final String CONSULTA_NAO_RETORNOU_RESULTADO = "A consulta não retornou resultado.";
 	
 	@Autowired
 	private PlanetaRepository repository;
 	
 	public PlanetaDomain obterPor(Integer id) {
 		return repository.findById(id)
-				.orElseThrow(() -> new ApiNotFoundException(OBJETO_NÃO_ENCONTRADO_NA_BASE_DE_DADOS));
+				.orElseThrow(() -> new ApiNotFoundException(CONSULTA_NAO_RETORNOU_RESULTADO));
 	}
 	
 	public PlanetaDomain obterPor(String nome) {
 		return repository.findByName(nome)
-				.orElseThrow(() -> new ApiNotFoundException(OBJETO_NÃO_ENCONTRADO_NA_BASE_DE_DADOS));
+				.orElseThrow(() -> new ApiNotFoundException(CONSULTA_NAO_RETORNOU_RESULTADO));
 	}
 	
 	public List<PlanetaDomain> obterTodos() {

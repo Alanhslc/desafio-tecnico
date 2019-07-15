@@ -63,8 +63,9 @@ public class PlanetaResource {
 	}
 	
 	@DeleteMapping("/remover-por-id/{id}")
-	public void removerPor(@PathVariable Integer id) {
+	public ResponseEntity<Void> removerPor(@PathVariable Integer id) {
 		planetaService.removerPor(id);
+		return ResponseEntity.noContent().build();
 	}
 	
 }

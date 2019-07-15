@@ -9,7 +9,7 @@ public class ApiNotFoundException extends RuntimeException {
 	public ApiNotFoundException(String mensagemInterna) {
 		super(mensagemInterna);
 		this.mensagemInterna = mensagemInterna;
-		this.mensagemUsuario = "O recurso não foi encontrado.";
+		this.mensagemUsuario = "A consulta não retornou resultado.";
 	}
 
 	public String getMensagemInterna() {
