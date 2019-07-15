@@ -25,4 +25,10 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 	    return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
 	}
 	
+	@ExceptionHandler({ ApiBadCredentialsException.class })
+	public ResponseEntity<Object> handleApiBadCredentalsException(ApiBadCredentialsException ex, WebRequest request) {
+		ErrorResponse apiError = new ErrorResponse(HttpStatus.UNAUTHORIZED, ex.getMensagemInterna(), ex.getMensagemUsuario());
+		return new ResponseEntity<Object>(apiError, new HttpHeaders(), apiError.getStatus());
+	}
+	
 }

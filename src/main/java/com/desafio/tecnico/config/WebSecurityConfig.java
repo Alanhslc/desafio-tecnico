@@ -1,4 +1,4 @@
-package com.desafio.tecnico.security;
+package com.desafio.tecnico.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +14,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.desafio.tecnico.security.JwtAuthenticationEntryPoint;
+import com.desafio.tecnico.security.JwtRequestFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -50,12 +53,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		
+		String[] noAuthPaths = {"/autenticar",
+								"/swagger-ui.html",
+								"/v2/api-docs",
+								"/configuration/ui/**",
+								"/swagger-resources/**",
+								"/configuration/security/**",
+								"/swagger-ui.html",
+				           	 	"/webjars/**"};
+		
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 		// dont authenticate this particular request
-		.authorizeRequests().antMatchers("/autenticar").permitAll().
+		.authorizeRequests()
+		.antMatchers(noAuthPaths).permitAll()
 		// all other requests need to be authenticated
-		anyRequest().authenticated().and().
+		.anyRequest().authenticated().and().
 		// make sure we use stateless session; session won't be used to
 		// store user's state.
 		exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()

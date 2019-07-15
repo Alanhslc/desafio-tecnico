@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.desafio.tecnico.exception.ApiBadCredentialsException;
+
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
@@ -40,9 +42,9 @@ public class JwtAuthenticationController {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 		} catch (DisabledException e) {
-			throw new Exception("USER_DISABLED", e);
+			throw new Exception("Usuário inativo.", e);
 		} catch (BadCredentialsException e) {
-			throw new Exception("INVALID_CREDENTIALS", e);
+			throw new ApiBadCredentialsException("Credenciais inválidas.", e);
 		}
 	}
 	

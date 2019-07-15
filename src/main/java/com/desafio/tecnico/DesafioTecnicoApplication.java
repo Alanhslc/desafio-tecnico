@@ -35,9 +35,9 @@ public class DesafioTecnicoApplication implements CommandLineRunner {
 		if (planetas.isEmpty()) {
 			PlanetaDomain planeta = new PlanetaDomain();
 			planeta.setId(1);
-			planeta.setNome("aaa");
-			planeta.setTerreno("bbb");
-			planeta.setClima("ddd");
+			planeta.setNome("Tatooine");
+			planeta.setTerreno("desert");
+			planeta.setClima("arid");
 			
 			planetaService.inserirPor(planeta);
 		}

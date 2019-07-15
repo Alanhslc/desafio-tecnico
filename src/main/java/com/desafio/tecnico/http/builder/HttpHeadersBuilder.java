@@ -6,7 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 /**
- * Constrói a classe HttpHeader com os valores padrão para retorno em JSON e browsers. <br>
+ * Constrói a classe HttpHeader com o padrão para retorno em JSON e browsers. <br>
  * Estes valores podem ser alterados dinamicamente conforme a necessidade.
  * @author alanh
  *
