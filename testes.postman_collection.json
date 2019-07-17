@@ -19,26 +19,32 @@
 	"requests": [
 		{
 			"id": "034a1f3f-4c7a-4ff5-2b20-2e0b79354eed",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-nome/zzz",
+			"headers": "Authorization: \n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-nome/",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
 			"data": null,
 			"dataMode": "params",
-			"name": "ObterPorNome",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1563045555771,
 			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
+			"helperAttributes": {},
+			"time": 1563330768478,
+			"name": "ObterPorNome",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": []
 		},
 		{
 			"id": "2c329fce-3234-8931-c5d5-49766e74d13d",
@@ -69,12 +75,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1563158515204,
+			"time": 1563329456664,
 			"name": "Salvar",
 			"description": "",
 			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
 			"responses": [],
-			"rawModeData": "{\n\t\"id\": 4,\n\t\"nome\": \"sdsd\",\n\t\"clima\": \"qwqwq\",\n\t\"terreno\": \"1212\"\n}"
+			"rawModeData": "{\n\t\"nome\": \"Hoth\",\n\t\"clima\": \"frozen\",\n\t\"terreno\": \"tundra, ice caves, mountain ranges\"\n}"
 		},
 		{
 			"id": "5d77c4bb-9692-1bba-5d18-032cf7102f86",
@@ -87,7 +93,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-id/1",
+			"url": "http://localhost:8080/desafio-tecnico/planeta/obter-por-id/",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -99,7 +105,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1563158607298,
+			"time": 1563330494327,
 			"name": "ObterPorId",
 			"description": "",
 			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
@@ -109,24 +115,31 @@
 			"id": "622d2b87-9e7d-5e60-8b06-53736666fc26",
 			"headers": "",
 			"headerData": [],
-			"url": "https://swapi.co/api/planets/4",
-			"queryParams": [],
+			"url": "https://swapi.co/api/planets/?search=Tatooine",
+			"queryParams": [
+				{
+					"key": "search",
+					"value": "Tatooine",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
 			"data": null,
 			"dataMode": "params",
-			"name": "SwapiApi",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1563045568503,
 			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
+			"helperAttributes": {},
+			"time": 1563330476976,
+			"name": "SwapiApi",
+			"description": "",
+			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",
+			"responses": []
 		},
 		{
 			"id": "9abb30db-1693-0002-e033-a3e8848ee56f",
@@ -199,7 +212,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8080/desafio-tecnico/planeta/remover-por-id/1",
+			"url": "http://localhost:8080/desafio-tecnico/planeta/remover-por-id/",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -211,7 +224,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1563158479131,
+			"time": 1563330462470,
 			"name": "Remover",
 			"description": "",
 			"collectionId": "147016f4-5ce5-7dee-4ff0-a828965ac3c7",

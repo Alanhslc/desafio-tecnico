@@ -2,6 +2,7 @@ package com.desafio.tecnico.services;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class PlanetaService {
 	@Autowired
 	private PlanetaRepository repository;
 	
-	public PlanetaDomain obterPor(Integer id) {
+	public PlanetaDomain obterPor(ObjectId id) {
 		return repository.findById(id)
 				.orElseThrow(() -> new ApiNotFoundException(CONSULTA_NAO_RETORNOU_RESULTADO));
 	}
@@ -31,8 +32,8 @@ public class PlanetaService {
 		return repository.findAll();
 	}
 	
-	public void removerPor(Integer id) {
-		repository.deleteById(id);
+	public void removerPor(PlanetaDomain planeta) {
+		repository.delete(planeta);
 	}
 	
 	public PlanetaDomain inserirPor(PlanetaDomain planeta) {

@@ -2,6 +2,7 @@ package com.desafio.tecnico.resources;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +28,7 @@ public class PlanetaResource {
 	private SwapiService swapiService;
 	
 	@GetMapping("/obter-por-id/{id}")
-	public ResponseEntity<PlanetaDomain> obterPor(@PathVariable Integer id) {
+	public ResponseEntity<PlanetaDomain> obterPor(@PathVariable ObjectId id) {
 		
 		PlanetaDomain planeta = planetaService.obterPor(id);
 		swapiService.obterAparicoesEmFilmePor(planeta);
@@ -63,8 +64,9 @@ public class PlanetaResource {
 	}
 	
 	@DeleteMapping("/remover-por-id/{id}")
-	public ResponseEntity<Void> removerPor(@PathVariable Integer id) {
-		planetaService.removerPor(id);
+	public ResponseEntity<Void> removerPor(@PathVariable ObjectId id) {
+		PlanetaDomain planeta = planetaService.obterPor(id);
+		planetaService.removerPor(planeta);
 		return ResponseEntity.noContent().build();
 	}
 	

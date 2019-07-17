@@ -1,5 +1,7 @@
 package com.desafio.tecnico.integracao;
 
+import static java.util.Arrays.asList;
+
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,13 +13,14 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.desafio.tecnico.domains.PlanetaDomain;
+import com.desafio.tecnico.integracao.dto.ResultDTO;
 import com.desafio.tecnico.integracao.dto.SwapiDTO;
 
 @Service
 public class SwapiService {
 
 	private static final Logger LOGGER = LogManager.getLogger(SwapiService.class);
-	private static final String URL = "https://swapi.co/api/planets/";
+	private static final String URL = "https://swapi.co/api/planets/?search=";
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -27,8 +30,9 @@ public class SwapiService {
         int aparicoesEmFilme = 0;
 
         try {
-        	SwapiDTO swapiDTO = restTemplate.getForObject(URL + planeta.getId(), SwapiDTO.class);
-        	aparicoesEmFilme = swapiDTO.getFilms().length;
+        	SwapiDTO swapiDTO = restTemplate.getForObject(URL + planeta.getNome(), SwapiDTO.class);
+        	List<ResultDTO> results = asList(swapiDTO.getResults());
+        	aparicoesEmFilme = results.stream().mapToInt(ResultDTO::countFilms).sum();
 		} catch (HttpClientErrorException e) {
 			
 			if(e.getStatusCode().compareTo(HttpStatus.NOT_FOUND) == 0) {

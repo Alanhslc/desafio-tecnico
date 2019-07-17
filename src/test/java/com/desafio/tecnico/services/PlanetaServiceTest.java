@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Optional;
 
+import org.bson.types.ObjectId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -21,8 +22,8 @@ import com.desafio.tecnico.repositories.PlanetaRepository;
 public class PlanetaServiceTest {
 
 	private static final String OBJETO_NÃO_ENCONTRADO_NA_BASE_DE_DADOS = "Objeto não encontrado na base de dados.";
-	private static final int ID_PLANETA_VALIDO = 1;
-	private static final int ID_PLANETA_INVALIDO = 193;
+	private static final ObjectId ID_PLANETA_VALIDO = ObjectId.get();
+	private static final ObjectId ID_PLANETA_INVALIDO = ObjectId.get();
 	private static final String NOME_VALIDO = "Nome Válido";
 	private static final String NOME_INVALIDO = "Nome Inválido";
 

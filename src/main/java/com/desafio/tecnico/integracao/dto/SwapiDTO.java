@@ -1,25 +1,18 @@
 package com.desafio.tecnico.integracao.dto;
 
-import java.util.Arrays;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SwapiDTO {
 
-	private String[] films;
+	private ResultDTO[] results;
 
-	public String[] getFilms() {
-		return films;
+	public ResultDTO[] getResults() {
+		return results;
 	}
 
-	public void setFilms(String[] films) {
-		this.films = films;
-	}
-
-	@Override
-	public String toString() {
-		return "SwapiDTO [films=" + Arrays.toString(films) + "]";
+	public void setResults(ResultDTO[] results) {
+		this.results = results;
 	}
 	
 }

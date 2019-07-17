@@ -1,5 +1,6 @@
 package com.desafio.tecnico.domains;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class PlanetaDomain {
 
 	@Id
-	private Integer id;
+	private ObjectId _id;
 	
 	private String nome;
 	
@@ -22,14 +23,14 @@ public class PlanetaDomain {
 	@JsonSerialize
 	private Integer aparicoesEmFilme = 0;
 
-	public Integer getId() {
-		return id;
+	public String get_id() { 
+		return _id.toHexString(); 
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void set_id(ObjectId _id) { 
+		this._id = _id; 
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
